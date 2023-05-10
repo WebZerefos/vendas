@@ -1,5 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, TouchableOpacityProps, View } from 'react-native'
 import React from 'react'
+import LinearGradient from 'react-native-linear-gradient'
 
 import { theme } from './themes/theme'
 
@@ -13,7 +14,14 @@ const Button = ({ title, ...props }: ButtonProps) => {
 			{...props}
 			style={styles.buttonContainer}
 		>
-			<Text style={styles.text}>{title}</Text>
+			<LinearGradient
+				colors={['#d9534f', '#428bca']}
+				start={{ x: 0.0, y: 0.0 }}
+				end={{ x: 1.0, y: 1.0 }}
+				style={styles.linearGradient}
+			>
+				<Text style={styles.text}>{title}</Text>
+			</LinearGradient>
 		</TouchableOpacity>
 	)
 }
@@ -23,15 +31,18 @@ export default Button
 const styles = StyleSheet.create({
 	buttonContainer: {
 		width: '100%',
-		height: 50,
-		borderRadius: 6,
-		backgroundColor: '#687387',
-		alignItems: 'center',
-		justifyContent: 'center',
 		margin: 8,
 	},
 	text: {
 		color: theme.colors.neutralTheme.white,
 		fontFamily: 'Poppins-Bold',
+	},
+	linearGradient: {
+		borderRadius: 5,
+		borderColor: '#ffffff',
+		borderWidth: 0.3,
+		height: 50,
+		alignItems: 'center',
+		justifyContent: 'center',
 	},
 })
