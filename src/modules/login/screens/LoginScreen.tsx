@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import Input from '../../../shared/components/Input'
 import Button from '../../../shared/components/Button'
@@ -9,10 +9,9 @@ const LoginScreen = () => {
 	}
 	return (
 		<View style={styles.container}>
-			<Text>LoginScreen</Text>
 			<Input placeholder='Enter text...' />
 			<Button
-				title='Entrar'
+				title='ENTRAR'
 				onPress={handleOnPress}
 			/>
 		</View>

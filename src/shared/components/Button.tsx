@@ -1,6 +1,8 @@
 import { StyleSheet, Text, TouchableOpacity, TouchableOpacityProps, View } from 'react-native'
 import React from 'react'
 
+import { theme } from './themes/theme'
+
 interface ButtonProps extends TouchableOpacityProps {
 	title: string
 }
@@ -11,7 +13,7 @@ const Button = ({ title, ...props }: ButtonProps) => {
 			{...props}
 			style={styles.buttonContainer}
 		>
-			<Text>{title}</Text>
+			<Text style={styles.text}>{title}</Text>
 		</TouchableOpacity>
 	)
 }
@@ -27,5 +29,9 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 		margin: 8,
+	},
+	text: {
+		color: theme.colors.neutralTheme.white,
+		fontFamily: 'Poppins-Bold',
 	},
 })
