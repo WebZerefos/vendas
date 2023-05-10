@@ -9,8 +9,11 @@ const LoginScreen = () => {
 	}
 	return (
 		<View style={styles.container}>
-			<Input placeholder='Enter text...' />
+			<Input placeholder='E-mail' />
+			<Input placeholder='Password' />
 			<Button
+				disabled={false}
+				loading={false}
 				title='ENTRAR'
 				onPress={handleOnPress}
 			/>
@@ -24,7 +27,6 @@ const styles = StyleSheet.create({
 	container: {
 		height: '100%',
 		width: '100%',
-		backgroundColor: 'green',
 		justifyContent: 'center',
 		alignItems: 'center',
 		padding: 16,
